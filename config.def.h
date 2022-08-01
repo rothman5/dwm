@@ -1,21 +1,21 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Source Code Pro:size=10" };
-static const char dmenufont[]       = "Source Code Pro:size=10";
+static const char *fonts[]          = { "source-code-pro:size=10" };
+static const char dmenufont[]       = "source-code-pro:size=10";
 static const char bg_black[]        = "#2b2b2b";
 static const char col_gray1[]       = "#5b5b5b";
 static const char col_white[]       = "#d8dee9";
 static const char col_gray2[]       = "#eceff4";
-static const char col_blue[]        = "#5e81ac";
+// static const char col_blue[]        = "#5e81ac";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, bg_black, col_gray1 },
-	[SchemeSel]  = { col_gray2, col_blue,  col_blue },
+	[SchemeNorm] = { col_white, bg_black,  col_gray1 },
+	[SchemeSel]  = { col_gray2, col_gray1, col_gray1 },
 };
 
 /* tagging */
@@ -57,7 +57,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_black, "-nf", col_white, "-sb", col_blue, "-sf", col_gray2, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", bg_black, "-nf", col_white, "-sb", col_gray1, "-sf", col_gray2, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
